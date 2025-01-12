@@ -6,7 +6,6 @@
 }
 
 body {
-  background-size: cover;
   font-family: 'Poppins', sans-serif;
   display: flex;
   justify-content: center;
@@ -14,20 +13,20 @@ body {
   min-height: 100vh;
   margin: 0;
   background-color: #333333;
+  background-size: cover;
 }
 
 /* Main Container */
 .container {
-  width: 70vh;
-  height: 90vh;
+  width: 70vw;
+  height: 100vh;
   background: white;
   border-radius: 1rem;
   padding: 1rem;
   box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.918);
-  background-image: url(LeaderBoard-Classic-bg.png);
+  background-image: url(LeaderBoard-bg.png);
   background-size: cover;
 }
-
 
 /* Header Title */
 .header .title {
@@ -37,32 +36,29 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
   padding: 0.25rem 0;
-  margin-top: 2.5rem;
+  margin: 2.5rem auto;
   border-radius: 0.25rem;
-  width:33vh;
-  box-shadow: 0.5rem 0.5rem 0.5rem 0.5rem rgba(1, 1, 1, 0.2);
-
+  width: 20vw;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(1, 1, 1, 0.2);
 }
-.headerContainer{
+
+.headerContainer {
   display: flex;
   justify-content: space-around;
-
 }
 
 /* Table Layout */
 .table {
-  margin-top: 4.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding:1rem;
+  margin: 5rem 7rem 0;
+  padding: 1rem;
 }
 
 /* Table Header */
-.table-header{
+.table-header {
   display: flex;
   justify-content: space-between;
   font-weight: bold;
-  margin:0 1rem 1rem 4.75rem;
+  margin: 0 2rem 1rem 7rem;
   color: #333;
 }
 
@@ -71,13 +67,18 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 10px; */
   border-radius: 5px;
   color: #000;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   border: 2px solid #a08413;
-  clip-path: polygon(0% 0%, 9.23% 0%, 11.45% 14.72%, 12.31% 0%, 71.13% 0%, 73.5% 14.72%, 74.99% 0%, 100% 0%, 100% 100%, 74.99% 100%, 73.5% 85.28%, 71.13% 100%, 12.31% 100%, 11.45% 85.28%, 9.23% 100%, 0% 100%, 0% 50%);
+  clip-path: polygon(
+    0% 0%, 9.23% 0%, 11.45% 14.72%, 12.31% 0%, 
+    71.13% 0%, 73.5% 14.72%, 74.99% 0%, 100% 0%, 
+    100% 100%, 74.99% 100%, 73.5% 85.28%, 71.13% 100%, 
+    12.31% 100%, 11.45% 85.28%, 9.23% 100%, 0% 100%, 
+    0% 50%
+  );
 }
 
 .team-info {
@@ -88,44 +89,25 @@ body {
   align-items: center;
 }
 
-
 /* Row Backgrounds */
 .row1 {
   background-color: #ffd814af;
   border: 2px solid #a08313;
-  height:7vh;
+  height: 7vh;
 }
 
 .row2 {
   background-color: #767676af;
   border: 2px solid #737169;
-  height:7vh;
+  height: 7vh;
 }
 
-.row .rank{
-  font-size: 1.2rem;
-  font-weight: 800;
-  margin: auto;
-  width: 10px;
-  text-align: center;
-}
-.row .team-name{
-  font-size: 1.2rem;    
-  font-weight: 350;
-  margin: auto;
-  text-align: start;
-}
-.row .score{
-  font-size: 1.2rem;    
-  font-weight: 350;
-  margin: auto;
-}
 .row3,
 .row4,
 .row5 {
   background-color: #fe3d3daf;
   border: 2px solid #c43a18;
-  height:7vh;
+  height: 7vh;
 }
 
 /* Rank Styling */
@@ -133,17 +115,86 @@ body {
   width: 40px;
   text-align: center;
   font-size: 18px;
+  font-weight: 800;
 }
 
-/* Team Name */
 .team-name {
   flex: 1;
   font-size: 18px;
+  font-weight: 350;
+  text-align: start;
 }
 
-/* Score Styling */
 .score {
-  width: 60px;
+  width: 10rem;
   text-align: center;
   font-size: 18px;
+  font-weight: 350;
+}
+
+/* Responsive Styling for Phones */
+@media (max-width: 576px) {
+  /* Main Container Adjustments */
+  .container {
+    width: 90vw;
+    height: auto;
+    padding: 1rem;
+    background-image: url(LeaderBoard-Classic-bg.png);
+    background-size: cover;
+  }
+
+  /* Header Adjustments */
+  .header .title {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    width: 100%;
+    box-shadow: 0.25rem 0.25rem 0.25rem rgba(1, 1, 1, 0.2);
+  }
+  
+  .team-info{
+    padding: 0;
+  }
+
+  /* Table Adjustments */
+  .table {
+    margin: 2rem 0.5rem;
+    padding: 1rem;
+  }
+
+  .table-header {
+    flex-wrap: wrap;
+    margin: 0 0 0 2rem;
+    text-align: center;
+    padding-left: 1rem;
+    align-items: center;
+  }
+
+  .row {
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+  }
+
+  /* Adjust Font Sizes */
+  .team-name{
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    padding-left: 1rem;
+  }
+
+  /* Width Adjustments */
+  .rank {
+    width: auto;
+    font-size: 1rem;
+    margin: 0.5rem auto;
+    text-align: center;
+  }
+
+  .score {
+    font-size: 1rem;
+    margin: 0.5rem ;
+    text-align: center;
+    width: 30%;
+  }
 }
